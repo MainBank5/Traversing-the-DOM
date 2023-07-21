@@ -266,3 +266,18 @@ function removeButton () {
 }
 
 removeButton();
+
+//removechild 
+
+function removeSecondChild () {
+    //select the parent and child you want to remove
+    const parent = document.querySelector('.tie');
+    const secondChild = document.querySelector('li:nth-child(2)');
+
+    parent.removeChild(secondChild);
+
+}
+
+removeSecondChild()
+
+//the above didnt work due to conflicting list items 
