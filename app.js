@@ -45,7 +45,9 @@ firstChild.nextElementSibling.style.color = 'yellow'
 
 //DOM Node relationship works with all nodes while DOM element relationship works with elements only 
 let display;
+//select the parent
 const parentz = document.querySelector('.parentz');
+
 console.log(parentz.childNodes);
 console.log(parentz.childNodes[0].textContent);
 console.log(parentz.childNodes[0].nodeName);
@@ -165,6 +167,7 @@ function insertBeforeItem () {
    const li = document.createElement('li');
    li.textContent = 'Brocolli';
 
+   //the item you want to replace
    const thirdItemz = document.querySelector('li:nth-child(3)');
 
    ul.insertBefore(li, thirdItemz);
@@ -214,3 +217,52 @@ function replaceall () {
 }
 
 replaceall();
+
+//replace child
+function replacechildren () {
+    //select the parent and the child you want to replace
+    const listItemz = document.querySelector('.items').children[0];
+    
+    
+    //create the replacement text node
+    const newNode = document.createTextNode('Cadbury');
+
+    //replace the old text node
+    listItemz.replaceChild(newNode, listItemz.childNodes[0]);
+
+
+}
+
+replacechildren();
+
+//const matriach = document.querySelector('.items');
+//output = matriach.childNodes[0];
+//console.log(output)
+
+
+function replacingChild () {
+    //select the parent and child you want to replace
+    const header = document.querySelector('header');
+    const h1 = document.querySelector('header h1');
+
+    //create the new replacement element 
+    const h3 = document.createElement('h3');
+    //h3.id ='app-title';
+    h3.textContent ='Welcome!';
+
+    //replace the old 
+    header.replaceChild(h3, h1);
+
+
+}
+
+replacingChild();
+
+//remove 
+
+function removeButton () {
+    const clearBtn = document.querySelector('#clear');
+    clearBtn.remove();
+}
+
+removeButton();
